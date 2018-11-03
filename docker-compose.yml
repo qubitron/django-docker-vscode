@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  python-sample-vscode-django-tutorial:
+    image: python-sample-vscode-django-tutorial
+    build: .
+    ports:
+      - 8000:8000
+      - 5678:5678

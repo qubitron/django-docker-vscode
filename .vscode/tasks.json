@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker Restart",
+            "type": "shell",
+            "command": "docker-compose -f \"docker-compose.yml\" down && docker-compose -f \"docker-compose.yml\" up -d --build",
+            "windows": {
+                "command": "docker-compose -f \"docker-compose.yml\" down & docker-compose -f \"docker-compose.yml\" up -d --build"
+            }
+        },
+        {
+            "label": "Docker Stop",
+            "type": "shell",
+            "command": "docker-compose -f \"docker-compose.yml\" down",
+        }
+    ]
+}

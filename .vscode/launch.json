@@ -12,11 +12,17 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Python: Attach",
+            "name": "Python: Run in Docker",
             "type": "python",
             "request": "attach",
             "port": 5678,
-            "host": "localhost"
+            "host": "localhost",
+            "pathMappings": [{
+                "localRoot": "${workspaceFolder}",
+                "remoteRoot": "/"
+            }],
+            "preLaunchTask": "Docker Restart",
+            "postDebugTask": "Docker Stop"
         },
         {
             "name": "Python: Django",
