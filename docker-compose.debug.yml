@@ -5,6 +5,7 @@ services:
     image: python-sample-vscode-django-tutorial
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: debug.Dockerfile
     ports:
       - 8000:8000
+      - 5678:5678

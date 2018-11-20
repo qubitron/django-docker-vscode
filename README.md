@@ -12,6 +12,15 @@ To run the sample:
 
 Contributions to the sample are welcome. When submitting changes, also consider submitting matching changes to the tutorial, the source file for which is [tutorial-django.md](https://github.com/Microsoft/vscode-docs/blob/master/docs/python/tutorial-django.md).
 
+# Debugging in Docker
+In this repo there's a debug configuration for running the code in docker, after following the steps above you can debug the sample in a docker container by setting the `Python: Run in Docker` configuration as active.
+
+The following files contain the configuration needed to enable this:
+- `debug.Dockerfile` installs the remote debugger and listens on port 5678
+- `docker-compose.debug.yml` provides uses the `debug.Dockerfile` and maps port 5678
+- `tasks.json` defines a task that will run docker compose up using the debug 
+- `launch.json` defines the `Run in Docker` debug configuration, which runs the compose up task and attaches the remote debugger to port 5678 when it successfully completes
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
